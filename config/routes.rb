@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  root to: "pins#index"
+  
+  delete '/pins' => 'pins#delete_all'
   resources :pins
 
   resources :boards

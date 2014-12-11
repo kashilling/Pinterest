@@ -5,11 +5,20 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    if users.counts > 5 
+      @some_text = "Yay, we have #{@users.count}!"
+    else 
+      @some_text = "We need more users."
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @boards = @user.boards
+    if @user.first_name == "Kim"
+      @some_text = "Hey Kim!"
+    else
+      @some_text = "You're not Kim, but hello #{user.first_name}!"
   end
 
   # GET /users/new
@@ -69,6 +78,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :email)
+      params.require(:user).permit(:first_name, :last_name, :email)
     end
 end

@@ -1,13 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<h1>
+	Showing all of <%= @user.first_name %>'s Boards:
+</h1>
+
+ <%= @some_text %>
+
 <p>
-  <strong>Name:</strong>
-  <%= @board.name %>
+  <strong> First Name:</strong>  
+  <%= @user.first.name %>
 </p>
 
 <p>
-  <strong>About:</strong>
-  <%= @board.about %>
+  <strong>User:</strong>
+  <%= @board.user.full_name %>
 </p>
 
 <p>
